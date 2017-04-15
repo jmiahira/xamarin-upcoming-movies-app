@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheMovies.View.MovieDetailsPage"
+             Title="Movie Details"
+             BackgroundColor="Black">
+    <ScrollView>
+        <StackLayout Spacing="10" Orientation="Vertical" HorizontalOptions="StartAndExpand" Padding="10">
+            <Image Source="{Binding poster_path_full}" Aspect="AspectFit" WidthRequest="600" HeightRequest="400"/>
+            <Label Text="{Binding original_title}" FontSize="16"  FontAttributes="Bold" TextColor="Red"></Label>
+            <Label Text="{Binding overview}" FontSize="12"  FontAttributes="None" TextColor="White"></Label>
+            
+            <StackLayout Orientation="Horizontal" Padding="3">
+                <Label Text="Genre:" FontSize="12" FontAttributes="None" TextColor="White" HorizontalOptions="Start" HorizontalTextAlignment="Start"></Label>
+                <Label Text="{Binding genres_description}" FontSize="12" FontAttributes="None" TextColor="White" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"></Label>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="3">
+                <Label Text="Release Date: " FontSize="12" FontAttributes="None" TextColor="White" HorizontalOptions="Start" HorizontalTextAlignment="Start"></Label>
+                <Label Text="{Binding release_date_formmated}" FontSize="12" FontAttributes="None" TextColor="White" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"></Label>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

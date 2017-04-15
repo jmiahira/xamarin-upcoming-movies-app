@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TheMovies.View.MoviesPage"
+             Title="The Movies - Upcoming Movies"
+             BackgroundColor="Black">
+    <StackLayout Padding="10" VerticalOptions="Start" HorizontalOptions="StartAndExpand" Orientation="Vertical">
+      <Label x:Name="lbl_movie_category" Text="upcoming movies" FontSize="Small"  FontAttributes="Bold" TextColor="White" HeightRequest="50" VerticalTextAlignment="Start" HorizontalTextAlignment="Start" IsVisible="False"/>
+        <ListView x:Name="ListMovies" HasUnevenRows="true" ItemTapped="ListMovies_ItemTapped" HeightRequest="800" ItemAppearing="ListMovies_ItemAppearing">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell >
+                        <ViewCell.View>
+                            <StackLayout Padding="10" Spacing="3" Orientation="Vertical" HorizontalOptions="StartAndExpand">
+                                <Image Source="{Binding poster_path_full}" Aspect="AspectFit" WidthRequest="500" HeightRequest="300"/>
+                                <Label Text="{Binding original_title}" FontSize="14"  FontAttributes="Bold" TextColor="Red"></Label>
+                                <StackLayout Orientation="Horizontal" Spacing="3">
+                                    <Label Text="Genre:" FontSize="Small" FontAttributes="None" TextColor="White" HorizontalOptions="Start"></Label>
+                                    <Label Text="{Binding genres_description}" FontSize="Small" FontAttributes="None" TextColor="White" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"></Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Spacing="3">
+                                    <Label Text="Release Date: " FontSize="Small" FontAttributes="None" TextColor="White" HorizontalOptions="Start"></Label>
+                                    <Label Text="{Binding release_date_formmated}" FontSize="Small" FontAttributes="None" TextColor="White" HorizontalOptions="FillAndExpand" HorizontalTextAlignment="Start"></Label>                                    
+                                </StackLayout>
+                            </StackLayout>                            
+                        </ViewCell.View>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>
